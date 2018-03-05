@@ -5,10 +5,10 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('NAMESPACE_acf_field_FIELD_NAME') ) :
+if( !class_exists('ffmfr_acf_field_post_date_time') ) :
 
 
-class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
+class ffmfr_acf_field_post_date_time extends acf_field {
 	
 	
 	/*
@@ -30,14 +30,14 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 		*  name (string) Single word, no spaces. Underscores allowed
 		*/
 		
-		$this->name = 'FIELD_NAME';
+		$this->name = 'post_date_time';
 		
 		
 		/*
 		*  label (string) Multiple words, can include spaces, visible when selecting a field type
 		*/
 		
-		$this->label = __('FIELD_LABEL', 'TEXTDOMAIN');
+		$this->label = __('Einsatz Zeitpunkt', 'acf-post-date-time');
 		
 		
 		/*
@@ -58,11 +58,11 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 		
 		/*
 		*  l10n (array) Array of strings that are used in JavaScript. This allows JS strings to be translated in PHP and loaded via:
-		*  var message = acf._e('FIELD_NAME', 'error');
+		*  var message = acf._e('post_date_time', 'error');
 		*/
 		
 		$this->l10n = array(
-			'error'	=> __('Error! Please enter a higher value', 'TEXTDOMAIN'),
+			'error'	=> __('Error! Please enter a higher value', 'acf-post-date-time'),
 		);
 		
 		
@@ -105,8 +105,8 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 		*/
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Font Size','TEXTDOMAIN'),
-			'instructions'	=> __('Customise the input font size','TEXTDOMAIN'),
+			'label'			=> __('Font Size','acf-post-date-time'),
+			'instructions'	=> __('Customise the input font size','acf-post-date-time'),
 			'type'			=> 'number',
 			'name'			=> 'font_size',
 			'prepend'		=> 'px',
@@ -178,13 +178,13 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 		
 		
 		// register & include JS
-		wp_register_script('TEXTDOMAIN', "{$url}assets/js/input.js", array('acf-input'), $version);
-		wp_enqueue_script('TEXTDOMAIN');
+		wp_register_script('acf-post-date-time', "{$url}assets/js/input.js", array('acf-input'), $version);
+		wp_enqueue_script('acf-post-date-time');
 		
 		
 		// register & include CSS
-		wp_register_style('TEXTDOMAIN', "{$url}assets/css/input.css", array('acf-input'), $version);
-		wp_enqueue_style('TEXTDOMAIN');
+		wp_register_style('acf-post-date-time', "{$url}assets/css/input.css", array('acf-input'), $version);
+		wp_enqueue_style('acf-post-date-time');
 		
 	}
 	
@@ -443,7 +443,7 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 		// Advanced usage
 		if( $value < $field['custom_minimum_setting'] )
 		{
-			$valid = __('The value is too little!','TEXTDOMAIN'),
+			$valid = __('The value is too little!','acf-post-date-time'),
 		}
 		
 		
@@ -557,7 +557,7 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 
 
 // initialize
-new NAMESPACE_acf_field_FIELD_NAME( $this->settings );
+new ffmfr_acf_field_post_date_time( $this->settings );
 
 
 // class_exists check

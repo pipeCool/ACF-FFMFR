@@ -1,12 +1,12 @@
 <?php
 
 /*
-Plugin Name: Advanced Custom Fields: FIELD_LABEL
-Plugin URI: PLUGIN_URL
-Description: SHORT_DESCRIPTION
+Plugin Name: Advanced Custom Fields: Einsatz Zeitpunkt
+Plugin URI: https://github.com/pipeCool/ACF-FFMFR
+Description: tbd
 Version: 1.0.0
-Author: AUTHOR_NAME
-Author URI: AUTHOR_URL
+Author: Felipe Wieman
+Author URI: ...
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -16,9 +16,9 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('NAMESPACE_acf_plugin_FIELD_NAME') ) :
+if( !class_exists('ffmfr_acf_plugin_post_date_time') ) :
 
-class NAMESPACE_acf_plugin_FIELD_NAME {
+class ffmfr_acf_plugin_post_date_time {
 	
 	// vars
 	var $settings;
@@ -49,8 +49,8 @@ class NAMESPACE_acf_plugin_FIELD_NAME {
 		
 		
 		// set text domain
-		// https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
-		load_plugin_textdomain( 'TEXTDOMAIN', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' ); 
+		// https://codex.wordpress.org/Function_Reference/load_plugin_acf-post-date-time
+		load_plugin_acf-post-date-time( 'acf-post-date-time', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' );
 		
 		
 		// include field
@@ -80,7 +80,7 @@ class NAMESPACE_acf_plugin_FIELD_NAME {
 		
 		
 		// include
-		include_once('fields/class-NAMESPACE-acf-field-FIELD-NAME-v' . $version . '.php');
+		include_once('fields/class-ffmfr-acf-field-post-date-time-v' . $version . '.php');
 		
 	}
 	
@@ -88,7 +88,7 @@ class NAMESPACE_acf_plugin_FIELD_NAME {
 
 
 // initialize
-new NAMESPACE_acf_plugin_FIELD_NAME();
+new ffmfr_acf_plugin_post_date_time();
 
 
 // class_exists check
