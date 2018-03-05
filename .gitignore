@@ -6,5 +6,6 @@
 .Spotlight-V100
 .Trashes
 .idea/
+*.iml
 ehthumbs.db
 Thumbs.db
